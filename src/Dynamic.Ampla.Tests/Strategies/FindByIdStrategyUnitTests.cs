@@ -1,13 +1,31 @@
 ﻿using System;
+using Dynamic.Ampla.AmplaData2008;
 using Dynamic.Ampla.Binders;
-using Dynamic.Ampla.Strategies;
+using Dynamic.Ampla.Tests;
+using Dynamic.Ampla.Tests.Strategies;
+using Dynamic.Ampla.WebServices.Simple.AmplaData2008;
 using NUnit.Framework;
 
-namespace Dynamic.Ampla.Tests.Strategies
+namespace Dynamic.Ampla.Strategies
 {
     [TestFixture]
     public class FindByIdStrategyUnitTests : TestFixture
     {
+        private const string module = "Production";
+        private const string location = "Enterprise.Site.Area.Production";
+
+        protected override void OnFixtureSetUp()
+        {
+            base.OnFixtureSetUp();
+            DataWebServiceFactory.Factory = () => new SimpleDataWebServiceClient(module, location);
+        }
+
+        protected override void OnFixtureTearDown()
+        {
+            DataWebServiceFactory.Factory = null;
+            base.OnFixtureTearDown();
+        }
+
         [Test]
         public void GetBinder()
         {

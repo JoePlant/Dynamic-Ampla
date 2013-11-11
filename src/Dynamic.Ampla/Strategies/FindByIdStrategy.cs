@@ -1,4 +1,5 @@
 ﻿using System.Dynamic;
+using Dynamic.Ampla.AmplaData2008;
 using Dynamic.Ampla.Binders;
 
 namespace Dynamic.Ampla.Strategies
@@ -23,7 +24,7 @@ namespace Dynamic.Ampla.Strategies
             {
                 if (NamedIdArgument.Matches(binder, args) || Position0Argument.Matches(binder, args))
                 {
-                    return new FindByIdDynamicBinder();
+                    return new FindByIdDynamicBinder(DataWebServiceFactory.Create(), CredentialsProvider.ForUsernameAndPassword("User", "password"));
                 }
             }
 
@@ -31,7 +32,7 @@ namespace Dynamic.Ampla.Strategies
             {
                 if (Position0Argument.Matches(binder, args) || NamedIdArgument.Matches(binder, args))
                 {
-                    return new FindByIdDynamicBinder();
+                    return new FindByIdDynamicBinder(DataWebServiceFactory.Create(), CredentialsProvider.ForUsernameAndPassword("User", "password"));
                 }
             }
             return null;

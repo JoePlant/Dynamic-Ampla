@@ -5,11 +5,11 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{731C1504-21BF-4E66-8952-BE55822C6F7A}</ProjectGuid>
+    <ProjectGuid>{0EF880C0-875B-4F3A-9A58-7598C5CDEF1A}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Dynamic.Ampla</RootNamespace>
-    <AssemblyName>Dynamic.Ampla</AssemblyName>
+    <RootNamespace>Dynamic.Ampla.WebServices.Simple</RootNamespace>
+    <AssemblyName>Dynamic.Ampla.WebServices.Simple</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -21,7 +21,6 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -34,7 +33,6 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.ServiceModel" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -49,46 +47,28 @@
     <Compile Include="..\Assembly.Version.cs">
       <Link>Properties\Assembly.Version.cs</Link>
     </Compile>
-    <Compile Include="AmplaData2008\CredentialsProvider.cs" />
-    <Compile Include="AmplaData2008\DataWebServiceClient.cs" />
-    <Compile Include="AmplaData2008\DataWebServiceFactory.cs" />
-    <Compile Include="AmplaData2008\ICredentialsProvider.cs" />
-    <Compile Include="AmplaData2008\IDataWebServiceClient.cs" />
-    <Compile Include="AmplaData2008\MetaData\DataTypeHelper.cs" />
-    <Compile Include="Binders\DynamicBinder.cs" />
-    <Compile Include="Binders\FindByIdBinder.cs" />
-    <Compile Include="Binders\IDynamicBinder.cs" />
-    <Compile Include="DynamicViewPoint.cs" />
-    <Compile Include="IDynamicViewPointOperations.cs" />
-    <Compile Include="ObjectExtensions.cs" />
+    <Compile Include="AmplaData2008\SimpleDataWebServiceClient.cs" />
+    <Compile Include="AmplaData2008\SimpleNavigationHierarchy.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Service References\AmplaData2008\Reference.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Compile>
-    <Compile Include="Strategies\Argument.cs" />
-    <Compile Include="Strategies\ArgumentMatchingStrategy.cs" />
-    <Compile Include="Strategies\FindByIdStrategy.cs" />
-    <Compile Include="Strategies\IStrategy.cs" />
-    <Compile Include="Strategies\Strategy.cs" />
-    <Compile Include="WebService\WebServiceFactory.cs" />
+    <Compile Include="Records\DateTimeExtensions.cs" />
+    <Compile Include="Records\FieldValue.cs" />
+    <Compile Include="Records\Filters\FieldFilterMatcher.cs" />
+    <Compile Include="Records\Filters\FilterMatcher.cs" />
+    <Compile Include="Records\Filters\IdFilterMatcher.cs" />
+    <Compile Include="Records\Filters\InMemoryFilterMatcher.cs" />
+    <Compile Include="Records\Filters\LocationFilterMatcher.cs" />
+    <Compile Include="Records\Filters\LocationWithRecurseFilterMatcher.cs" />
+    <Compile Include="Records\Filters\SamplePeriodFilterMatcher.cs" />
+    <Compile Include="Records\InMemoryAuditRecord.cs" />
+    <Compile Include="Records\InMemoryRecord.cs" />
+    <Compile Include="Records\InMemoryRecordExtensions.cs" />
+    <Compile Include="Records\PersistenceHelper.cs" />
   </ItemGroup>
   <ItemGroup>
-    <WCFMetadata Include="Service References\" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="app.config" />
-    <None Include="Service References\AmplaData2008\DataWebService.wsdl" />
-  </ItemGroup>
-  <ItemGroup>
-    <WCFMetadataStorage Include="Service References\AmplaData2008\" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\AmplaData2008\Reference.svcmap">
-      <Generator>WCF Proxy Generator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
+    <ProjectReference Include="..\Dynamic.Ampla\Dynamic.Ampla.csproj">
+      <Project>{731C1504-21BF-4E66-8952-BE55822C6F7A}</Project>
+      <Name>Dynamic.Ampla</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

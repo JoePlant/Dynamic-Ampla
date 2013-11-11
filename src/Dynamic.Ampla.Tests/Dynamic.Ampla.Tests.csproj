@@ -8,7 +8,7 @@
     <ProjectGuid>{4631B5D4-5A64-4D0A-905F-5C0DBF91B82F}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Dynamic.Ampla.Tests</RootNamespace>
+    <RootNamespace>Dynamic.Ampla</RootNamespace>
     <AssemblyName>Dynamic.Ampla.Tests</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
@@ -37,6 +37,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -51,21 +52,34 @@
       <Link>Properties\Assembly.Version.cs</Link>
     </Compile>
     <Compile Include="DynamicViewPointUnitTests.cs" />
+    <Compile Include="Modules\Downtime\DowntimeRecords.cs" />
+    <Compile Include="Modules\Production\ProductionRecords.cs" />
+    <Compile Include="Modules\Production\ProductionViews.cs" />
+    <Compile Include="Modules\StandardViews.cs" />
+    <Compile Include="Modules\ViewExtensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Strategies\ArgumentUnitTests.cs" />
     <Compile Include="Strategies\FindByIdStrategyUnitTests.cs" />
     <Compile Include="Strategies\TestInvokeMemberBinder.cs" />
     <Compile Include="TestFixture.cs" />
+    <Compile Include="WebServices\Simple\AmplaData2008\SimpleDataWebServiceClientUnitTests.cs" />
+    <Compile Include="WebServices\Simple\Records\FieldValueUnitTests.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="app.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Dynamic.Ampla.WebServices.Simple\Dynamic.Ampla.WebServices.Simple.csproj">
+      <Project>{0EF880C0-875B-4F3A-9A58-7598C5CDEF1A}</Project>
+      <Name>Dynamic.Ampla.WebServices.Simple</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Dynamic.Ampla\Dynamic.Ampla.csproj">
       <Project>{731C1504-21BF-4E66-8952-BE55822C6F7A}</Project>
       <Name>Massive.Ampla</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

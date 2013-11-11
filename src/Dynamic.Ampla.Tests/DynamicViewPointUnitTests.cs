@@ -1,13 +1,28 @@
-﻿using Microsoft.CSharp.RuntimeBinder;
+﻿using Dynamic.Ampla.AmplaData2008;
+using Dynamic.Ampla.Tests;
+using Dynamic.Ampla.WebServices.Simple.AmplaData2008;
+using Microsoft.CSharp.RuntimeBinder;
 using NUnit.Framework;
 
-namespace Dynamic.Ampla.Tests
+namespace Dynamic.Ampla
 {
     [TestFixture]
     public class DynamicViewPointUnitTests : TestFixture
     {
         private const string location = "Enterprise.Site.Area.Production";
         private const string module = "Production";
+
+        protected override void OnFixtureSetUp()
+        {
+            base.OnFixtureSetUp();
+            DataWebServiceFactory.Factory = () => new SimpleDataWebServiceClient(module, location);
+        }
+
+        protected override void OnFixtureTearDown()
+        {
+            DataWebServiceFactory.Factory = null;
+            base.OnFixtureTearDown();
+        }
 
         [Test]
         public void FindNamedArgument()

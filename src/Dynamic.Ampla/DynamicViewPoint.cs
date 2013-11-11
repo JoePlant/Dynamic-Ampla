@@ -1,5 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Dynamic;
+using Dynamic.Ampla.AmplaData2008;
 using Dynamic.Ampla.Binders;
 using Dynamic.Ampla.Strategies;
 
@@ -16,6 +18,16 @@ namespace Dynamic.Ampla
         public string Module { get; set; }
 
         public string Location { get; set; }
+
+        public AmplaModules AmplaModule
+        {
+            get
+            {
+                AmplaModules amplaModule;
+                Enum.TryParse(Module, out amplaModule);
+                return amplaModule;
+            }
+        }
 
         /// <summary>
         /// A helpful query tool

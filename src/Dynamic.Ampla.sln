@@ -5,6 +5,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dynamic.Ampla", "Dynamic.Am
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dynamic.Ampla.Tests", "Dynamic.Ampla.Tests\Dynamic.Ampla.Tests.csproj", "{4631B5D4-5A64-4D0A-905F-5C0DBF91B82F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dynamic.Ampla.WebServices.Simple", "Dynamic.Ampla.WebServices.Simple\Dynamic.Ampla.WebServices.Simple.csproj", "{0EF880C0-875B-4F3A-9A58-7598C5CDEF1A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -19,6 +21,10 @@ Global
 		{4631B5D4-5A64-4D0A-905F-5C0DBF91B82F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4631B5D4-5A64-4D0A-905F-5C0DBF91B82F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4631B5D4-5A64-4D0A-905F-5C0DBF91B82F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0EF880C0-875B-4F3A-9A58-7598C5CDEF1A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0EF880C0-875B-4F3A-9A58-7598C5CDEF1A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0EF880C0-875B-4F3A-9A58-7598C5CDEF1A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0EF880C0-875B-4F3A-9A58-7598C5CDEF1A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
