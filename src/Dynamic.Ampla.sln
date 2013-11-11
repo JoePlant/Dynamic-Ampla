@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dynamic.Ampla", "Dynamic.Ampla\Dynamic.Ampla.csproj", "{731C1504-21BF-4E66-8952-BE55822C6F7A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dynamic.Ampla.Tests", "Dynamic.Ampla.Tests\Dynamic.Ampla.Tests.csproj", "{4631B5D4-5A64-4D0A-905F-5C0DBF91B82F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{731C1504-21BF-4E66-8952-BE55822C6F7A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{731C1504-21BF-4E66-8952-BE55822C6F7A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{731C1504-21BF-4E66-8952-BE55822C6F7A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{731C1504-21BF-4E66-8952-BE55822C6F7A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4631B5D4-5A64-4D0A-905F-5C0DBF91B82F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4631B5D4-5A64-4D0A-905F-5C0DBF91B82F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4631B5D4-5A64-4D0A-905F-5C0DBF91B82F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4631B5D4-5A64-4D0A-905F-5C0DBF91B82F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
