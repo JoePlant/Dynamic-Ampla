@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Dynamic;
+using System.Linq;
 using Dynamic.Ampla.AmplaData2008;
+using Dynamic.Ampla.AmplaData2008.Binding;
 
-namespace Dynamic.Ampla.Binders
+namespace Dynamic.Ampla.Methods.Binders
 {
     public class FindByIdDynamicBinder : DynamicBinder, IDynamicBinder
     {
@@ -36,14 +38,13 @@ namespace Dynamic.Ampla.Binders
                 };
             GetDataResponse response = WebServiceClient.GetData(request);
         
-            ExpandoObject expando = new ExpandoObject();
-            IDictionary<string, object> dictionary = expando;
-    
-            dictionary.Add("Id", args[0]);
-            dictionary.Add("Location", point.Location);
-            dictionary.Add("Module", point.Module);
-
-            return expando;
+            List<dynamic> records = new List<dynamic>();
+            IAmplaBinding binding = new AmplaGetDataBinding(response, records);
+            if (binding.Validate() && binding.Bind())
+            {
+                return records.FirstOrDefault();
+            }
+            return null;
         }
     }
 }

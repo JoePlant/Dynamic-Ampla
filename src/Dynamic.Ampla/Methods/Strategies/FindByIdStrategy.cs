@@ -1,8 +1,8 @@
 ﻿using System.Dynamic;
 using Dynamic.Ampla.AmplaData2008;
-using Dynamic.Ampla.Binders;
+using Dynamic.Ampla.Methods.Binders;
 
-namespace Dynamic.Ampla.Strategies
+namespace Dynamic.Ampla.Methods.Strategies
 {
     /// <summary>
     /// Strategy for Find By Id

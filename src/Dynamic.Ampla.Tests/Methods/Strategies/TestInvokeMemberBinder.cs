@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Dynamic;
 
-namespace Dynamic.Ampla.Tests.Strategies
+namespace Dynamic.Ampla.Methods.Strategies
 {
     public class Binder
     {

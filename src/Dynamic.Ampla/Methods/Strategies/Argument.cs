@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Dynamic;
 
-namespace Dynamic.Ampla.Strategies
+namespace Dynamic.Ampla.Methods.Strategies
 {
     public abstract class Argument
     {

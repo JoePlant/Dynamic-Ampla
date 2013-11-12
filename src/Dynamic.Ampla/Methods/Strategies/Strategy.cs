@@ -1,7 +1,7 @@
 ﻿using System.Dynamic;
-using Dynamic.Ampla.Binders;
+using Dynamic.Ampla.Methods.Binders;
 
-namespace Dynamic.Ampla.Strategies
+namespace Dynamic.Ampla.Methods.Strategies
 {
     public abstract class Strategy : IStrategy
     {

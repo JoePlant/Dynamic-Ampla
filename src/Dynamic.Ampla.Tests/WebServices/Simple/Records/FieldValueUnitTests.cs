@@ -1,5 +1,4 @@
-﻿using Dynamic.Ampla.Tests;
-using NUnit.Framework;
+﻿using NUnit.Framework;
 
 namespace Dynamic.Ampla.WebServices.Simple.Records
 {

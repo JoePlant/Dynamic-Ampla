@@ -1,9 +1,7 @@
-﻿using System;
-using System.Dynamic;
-using Dynamic.Ampla.Strategies;
+﻿using System.Dynamic;
 using NUnit.Framework;
 
-namespace Dynamic.Ampla.Tests.Strategies
+namespace Dynamic.Ampla.Methods.Strategies
 {
     [TestFixture]
     public class ArgumentUnitTests : TestFixture

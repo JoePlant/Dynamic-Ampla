@@ -2,7 +2,7 @@
 using System.Diagnostics;
 using NUnit.Framework;
 
-namespace Dynamic.Ampla.Tests
+namespace Dynamic.Ampla
 {
     /// <summary>
     ///		Base class for TestFixtures with provision for specializing other base classes

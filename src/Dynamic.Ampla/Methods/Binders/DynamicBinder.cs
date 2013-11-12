@@ -1,7 +1,7 @@
 ﻿
 using Dynamic.Ampla.AmplaData2008;
 
-namespace Dynamic.Ampla.Binders
+namespace Dynamic.Ampla.Methods.Binders
 {
     public class DynamicBinder 
     {

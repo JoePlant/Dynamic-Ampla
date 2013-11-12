@@ -3,7 +3,6 @@ using System.ServiceModel;
 using Dynamic.Ampla.AmplaData2008;
 using Dynamic.Ampla.Modules.Downtime;
 using Dynamic.Ampla.Modules.Production;
-using Dynamic.Ampla.Tests;
 using Dynamic.Ampla.WebServices.Simple.Records;
 using NUnit.Framework;
 

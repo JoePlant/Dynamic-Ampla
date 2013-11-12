@@ -1,7 +1,7 @@
 ﻿using System.Dynamic;
-using Dynamic.Ampla.Binders;
+using Dynamic.Ampla.Methods.Binders;
 
-namespace Dynamic.Ampla.Strategies
+namespace Dynamic.Ampla.Methods.Strategies
 {
     /// <summary>
     ///     Interface for finding Dynamic Binders using the method names and arguments

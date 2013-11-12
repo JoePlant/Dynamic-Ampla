@@ -1,12 +1,9 @@
-﻿using System;
-using Dynamic.Ampla.AmplaData2008;
-using Dynamic.Ampla.Binders;
-using Dynamic.Ampla.Tests;
-using Dynamic.Ampla.Tests.Strategies;
+﻿using Dynamic.Ampla.AmplaData2008;
+using Dynamic.Ampla.Methods.Binders;
 using Dynamic.Ampla.WebServices.Simple.AmplaData2008;
 using NUnit.Framework;
 
-namespace Dynamic.Ampla.Strategies
+namespace Dynamic.Ampla.Methods.Strategies
 {
     [TestFixture]
     public class FindByIdStrategyUnitTests : TestFixture

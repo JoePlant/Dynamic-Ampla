@@ -1,6 +1,6 @@
 ﻿using System.Dynamic;
 
-namespace Dynamic.Ampla.Binders
+namespace Dynamic.Ampla.Methods.Binders
 {
     public interface IDynamicBinder
     {

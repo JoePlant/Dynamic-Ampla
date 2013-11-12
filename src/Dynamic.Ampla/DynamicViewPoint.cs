@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using System.Dynamic;
 using Dynamic.Ampla.AmplaData2008;
-using Dynamic.Ampla.Binders;
-using Dynamic.Ampla.Strategies;
+using Dynamic.Ampla.Methods.Binders;
+using Dynamic.Ampla.Methods.Strategies;
 
 namespace Dynamic.Ampla
 {

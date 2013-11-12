@@ -1,5 +1,5 @@
 ﻿using Dynamic.Ampla.AmplaData2008;
-using Dynamic.Ampla.Tests;
+using Dynamic.Ampla.Modules.Production;
 using Dynamic.Ampla.WebServices.Simple.AmplaData2008;
 using Microsoft.CSharp.RuntimeBinder;
 using NUnit.Framework;
@@ -12,16 +12,24 @@ namespace Dynamic.Ampla
         private const string location = "Enterprise.Site.Area.Production";
         private const string module = "Production";
 
-        protected override void OnFixtureSetUp()
+        private int id;
+
+        protected override void OnSetUp()
         {
-            base.OnFixtureSetUp();
-            DataWebServiceFactory.Factory = () => new SimpleDataWebServiceClient(module, location);
+            base.OnSetUp();
+            SimpleDataWebServiceClient client = new SimpleDataWebServiceClient(module, location)
+                {
+                    GetViewFunc = ProductionViews.StandardView
+                };
+
+            id = client.AddExistingRecord(ProductionRecords.NewRecord());
+            DataWebServiceFactory.Factory = () => client;
         }
 
-        protected override void OnFixtureTearDown()
+        protected override void OnTearDown()
         {
+            base.OnTearDown();
             DataWebServiceFactory.Factory = null;
-            base.OnFixtureTearDown();
         }
 
         [Test]
@@ -30,10 +38,11 @@ namespace Dynamic.Ampla
             DynamicViewPoint viewPoint = new DynamicViewPoint(location, module);
 
             dynamic point = viewPoint;
-            dynamic result = point.Find(Id: 100);
+            dynamic result = point.Find(Id: id);
 
             Assert.That(result, Is.Not.Null);
-            Assert.That(result.Id, Is.EqualTo(100));
+            Assert.That(result.Id, Is.EqualTo(id));
+            Assert.That(result.Location, Is.EqualTo(location));
         }
 
         [Test]
@@ -42,10 +51,11 @@ namespace Dynamic.Ampla
             DynamicViewPoint viewPoint = new DynamicViewPoint(location, module);
 
             dynamic point = viewPoint;
-            dynamic result = point.FindById(100);
+            dynamic result = point.FindById(id);
 
             Assert.That(result, Is.Not.Null);
-            Assert.That(result.Id, Is.EqualTo(100));
+            Assert.That(result.Id, Is.EqualTo(id));
+            Assert.That(result.Location, Is.EqualTo(location));
         }
 
         [Test]
@@ -54,10 +64,11 @@ namespace Dynamic.Ampla
             DynamicViewPoint viewPoint = new DynamicViewPoint(location, module);
 
             dynamic point = viewPoint;
-            dynamic result = point.Find(100);
+            dynamic result = point.Find(id);
 
             Assert.That(result, Is.Not.Null);
-            Assert.That(result.Id, Is.EqualTo(100));
+            Assert.That(result.Id, Is.EqualTo(id));
+            Assert.That(result.Location, Is.EqualTo(location));
         }
 
         [Test]
@@ -67,7 +78,7 @@ namespace Dynamic.Ampla
 
             dynamic point = viewPoint;
 
-            Assert.Throws<RuntimeBinderException>(()=>point.Find(SetId: 100));
+            Assert.Throws<RuntimeBinderException>(()=>point.Find(SetId: id));
         }
 
         [Test]
@@ -77,8 +88,7 @@ namespace Dynamic.Ampla
 
             dynamic point = viewPoint;
 
-            Assert.Throws<RuntimeBinderException>(() => point.Find(100, Id: 200));
+            Assert.Throws<RuntimeBinderException>(() => point.Find(id, Id: 200));
         }
-
     }
 }

@@ -1,7 +1,7 @@
 ﻿using System.Dynamic;
 using System.Linq;
 
-namespace Dynamic.Ampla.Strategies
+namespace Dynamic.Ampla.Methods.Strategies
 {
     public class ArgumentMatchingStrategy
     {

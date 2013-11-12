@@ -49,15 +49,17 @@
     <Compile Include="..\Assembly.Version.cs">
       <Link>Properties\Assembly.Version.cs</Link>
     </Compile>
+    <Compile Include="AmplaData2008\Binding\AmplaGetDataBinding.cs" />
+    <Compile Include="AmplaData2008\Binding\IAmplaBinding.cs" />
     <Compile Include="AmplaData2008\CredentialsProvider.cs" />
     <Compile Include="AmplaData2008\DataWebServiceClient.cs" />
     <Compile Include="AmplaData2008\DataWebServiceFactory.cs" />
     <Compile Include="AmplaData2008\ICredentialsProvider.cs" />
     <Compile Include="AmplaData2008\IDataWebServiceClient.cs" />
     <Compile Include="AmplaData2008\MetaData\DataTypeHelper.cs" />
-    <Compile Include="Binders\DynamicBinder.cs" />
-    <Compile Include="Binders\FindByIdBinder.cs" />
-    <Compile Include="Binders\IDynamicBinder.cs" />
+    <Compile Include="Methods\Binders\DynamicBinder.cs" />
+    <Compile Include="Methods\Binders\FindByIdBinder.cs" />
+    <Compile Include="Methods\Binders\IDynamicBinder.cs" />
     <Compile Include="DynamicViewPoint.cs" />
     <Compile Include="IDynamicViewPointOperations.cs" />
     <Compile Include="ObjectExtensions.cs" />
@@ -67,11 +69,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
-    <Compile Include="Strategies\Argument.cs" />
-    <Compile Include="Strategies\ArgumentMatchingStrategy.cs" />
-    <Compile Include="Strategies\FindByIdStrategy.cs" />
-    <Compile Include="Strategies\IStrategy.cs" />
-    <Compile Include="Strategies\Strategy.cs" />
+    <Compile Include="Methods\Strategies\Argument.cs" />
+    <Compile Include="Methods\Strategies\ArgumentMatchingStrategy.cs" />
+    <Compile Include="Methods\Strategies\FindByIdStrategy.cs" />
+    <Compile Include="Methods\Strategies\IStrategy.cs" />
+    <Compile Include="Methods\Strategies\Strategy.cs" />
     <Compile Include="WebService\WebServiceFactory.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -90,6 +92,7 @@
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
